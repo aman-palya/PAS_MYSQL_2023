@@ -1,0 +1,88 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue" class="navbar-brand">Quotes Details</h1>
+    <div class="d-flex">
+      <button routerLink="/home" class="btn btn-danger mz-2">Back</button>
+    </div>
+  </div>
+</nav>
+<form [formGroup]="quotesForm" (ngSubmit)="onSubmit()">
+  <div class="col-lg-8 p-4 m-auto card_cover">
+    <h1 class="text-center h1_tag">Add Quotes</h1>
+    <div class="p-4">
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4">Business Value</div>
+        <div class="col-lg-8">
+          <input
+            type="number"
+            formControlName="BUSINESS_VALUE"
+            placeholder="Please enter business value"
+            class="form-control"
+          />
+        </div>
+        <span
+          class="text-danger"
+          *ngIf="
+            quotesForm.controls['BUSINESS_VALUE'].dirty &&
+            quotesForm.hasError('required', 'BUSINESS_VALUE')
+          "
+          >*This is required field</span
+        >
+      </div>
+
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Property Type</label></div>
+        <div class="col-lg-8">
+          <select class="form-control" formControlName="PROPERTY_TYPE">
+            <option value="BUILDING">BUILDING</option>
+            <option value="FACTORY">FACTORY</option>
+            <option value="FLAT">FLAT</option>
+            <option value="PROPERTY IN THE TRANSIT">
+              PROPERTY IN THE TRANSIT
+            </option>
+          </select>
+          <span
+            class="text-danger"
+            *ngIf="
+              quotesForm.controls['PROPERTY_TYPE'].dirty &&
+              quotesForm.hasError('required', 'PROPERTY_TYPE')
+            "
+            >*This is required field</span
+          >
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4">Property Value</div>
+        <div class="col-lg-8">
+          <input
+            type="number"
+            formControlName="PROPERTY_VALUE"
+            placeholder="Please enter property value"
+            class="form-control"
+          />
+        </div>
+        <span
+          class="text-danger"
+          *ngIf="
+            quotesForm.controls['PROPERTY_VALUE'].dirty &&
+            quotesForm.hasError('required', 'PROPERTY_VALUE')
+          "
+          >*This is required field</span
+        >
+      </div>
+
+      <div class="row g-4 mt-2 align-items-center">
+        <div class="col-lg-4">
+          <button
+            class="btn btn-success"
+            type="submit"
+            [disabled]="!quotesForm.valid"
+          >
+            Save Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

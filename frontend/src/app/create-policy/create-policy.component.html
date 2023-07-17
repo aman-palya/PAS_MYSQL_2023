@@ -1,0 +1,221 @@
+<body>
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue" class="navbar-brand">Create Policy</h1>
+    <div class="d-flex">
+      <button routerLink="/policy" class="btn btn-danger mz-2">Back</button>
+    </div>
+  </div>
+</nav>
+<br>
+<form [formGroup]="createPolicyForm" class="container" (ngSubmit)="onSubmit()">
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Acceptance</div>
+    <div class="col-lg-8">
+      <input
+        type="text"
+        formControlName="acceptance"
+        placeholder="Please enter the acceptance"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['acceptance'].dirty &&
+        createPolicyForm.hasError('required', 'STATUS')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Acceptace Quote</div>
+    <div class="col-lg-8">
+      <input
+        type="text"
+        formControlName="acceptedquote"
+        placeholder="Please enter the acceptedquote"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['acceptedquote'].dirty &&
+        createPolicyForm.hasError('required', 'STATUS')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Amount</div>
+    <div class="col-lg-8">
+      <input
+        type="text"
+        formControlName="amount"
+        placeholder="Please enter the amount"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['amount'].dirty &&
+        createPolicyForm.hasError('required', 'amount')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Business ID</div>
+    <div class="col-lg-8">
+      <input
+        type="number"
+        formControlName="businessid"
+        placeholder="Please enter the businessid"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['businessid'].dirty &&
+        createPolicyForm.hasError('required', 'businessid')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Consumer ID</div>
+    <div class="col-lg-8">
+      <input
+        type="text"
+        formControlName="consumerid"
+        placeholder="Please enter the consumerid"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['consumerid'].dirty &&
+        createPolicyForm.hasError('required', 'consumerid')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Duration</div>
+    <div class="col-lg-8">
+      <input
+        type="text"
+        formControlName="duration"
+        placeholder="Please enter the duration"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['duration'].dirty &&
+        createPolicyForm.hasError('required', 'duration')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">edate</div>
+    <div class="col-lg-8">
+      <input
+        type="date"
+        formControlName="edate"
+        placeholder="Please enter the edate"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['edate'].dirty &&
+        createPolicyForm.hasError('required', 'edate')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Payment Details</div>
+    <div class="col-lg-8">
+      <select class="form-control" formControlName="paymentdetails">
+        <option value="Online">Online</option>
+        </select>
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['paymentdetails'].dirty &&
+        createPolicyForm.hasError('required', 'paymentdetails')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Policy Id</div>
+    <div class="col-lg-8">
+      <input
+        type="number"
+        formControlName="policyid"
+        placeholder="Please enter the policyid"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['policyid'].dirty &&
+        createPolicyForm.hasError('required', 'policyid')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mb-3">
+    <div class="col-lg-4">Policy Status</div>
+    <div class="col-lg-8">
+      <input
+        type="text"
+        formControlName="ploicystatus"
+        placeholder="Please enter the ploicystatus"
+        class="form-control"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        createPolicyForm.controls['ploicystatus'].dirty &&
+        createPolicyForm.hasError('required', 'ploicystatus')
+      "
+      >*This is required field</span
+    >
+  </div>
+
+  <div class="row g-4 align-items-center mt-3">
+    <div class="col-lg-4">
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!createPolicyForm.valid"
+      >
+        Save Policy
+      </button>
+    </div>
+  </div>
+</form>
+</body>

@@ -1,0 +1,43 @@
+<body style="background-image: url(assets/bg.jfif);background-repeat: no-repeat;background-size:auto;background-size: 1400px 700px">
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        
+        <h1 style="color:aliceblue;" class="navbar-brand">View Policy</h1>
+        <div class="d-flex">
+            
+            <button routerLink="/policy" class="btn btn-danger mz-2">Back</button>
+        </div>
+    </div>
+</nav>
+<br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <form [formGroup]="viewPolicyForm"  (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-25">
+        <label for="consumerId">Consumer ID</label>
+      </div>
+      <div class="col-75">
+        <input formControlName="consumerId" type="number" id="consumerId" name="consumerId">
+        <span class="text-danger" *ngIf="viewPolicyForm.controls['consumerId'].dirty && viewPolicyForm.hasError('required','consumerId')">*This is required field</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="policyId">Policy ID</label>
+      </div>
+      <div class="col-75">
+        <input formControlName="policyId" type="number"  id="policyId" name="policyId">
+        <span class="text-danger" *ngIf="viewPolicyForm.controls['policyId'].dirty && viewPolicyForm.hasError('required','policyId')">*This is required field</span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <input type="submit" value="View" class="btn btn-success" >
+    </div>
+    </form>
+  </div>
+
+</body>

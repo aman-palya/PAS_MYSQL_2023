@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Consumer Business</h2>
+<mat-dialog-content>
+  <table
+    class="table"
+    style="margin-left: auto; margin-right: auto; border: 1px solid black"
+  >
+    <thead>
+      <tr>
+        <th>Business Category</th>
+        <th>Business Type</th>
+        <th>Business Value</th>
+        <th>Business Age</th>
+        <th>Type</th>
+        <th>Captila Invested</th>
+        <th>Total Employees</th>
+        <th>Turnover</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ this.businessData.businesscategory }}</td>
+        <td>{{ this.businessData.businesstype }}</td>
+        <td>{{ this.businessData.businessValue }}</td>
+        <td>{{ this.businessData.businessAge }}</td>
+        <td>{{ this.businessData.type }}</td>
+        <td>{{ this.businessData.captialInvested }}</td>
+        <td>{{ this.businessData.totalEmployees }}</td>
+        <td>{{ this.businessData.turnover }}</td>
+      </tr>
+    </tbody>
+  </table></mat-dialog-content
+>

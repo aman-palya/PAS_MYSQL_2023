@@ -1,0 +1,42 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+    <br>
+<!--background="assets/policy.jfif" style="">
+    
+    <div class="head">-->
+        <h1 class="head">Policy Administration System</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngIf="error!=undefined">
+                {{error}}
+            </div>
+            <div class="card">
+                <marquee style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Welcome to Policy Administration!!</marquee>
+                <div class="text-center">
+                    <h1>Login</h1>
+                    
+                </div>
+                
+               
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Username</label>
+                            <input formControlName="username" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the username">
+                            <span class="text-danger" *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">*username is required</span>
+                          </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter the password">
+                          <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*password is required</span>
+                        </div>
+                        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary mt-3">Login</button>
+                    </form>
+                    <a style="color: #000080; margin-top: 10px;text-decoration: none;" routerLink="/signup">New user? Click here to Sign Up!!</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>

@@ -1,0 +1,104 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        
+        <h1 style="color:aliceblue;" class="navbar-brand">Edit Business Details</h1>
+        <div class="d-flex">
+            
+            <button routerLink="/business" class="btn btn-danger mz-2">Back</button>
+        </div>
+    </div>
+</nav>
+
+<div class="p-3"></div>
+
+<div class="p-3"></div>
+<div class="row col-lg-8 align-items-center m-auto p-0 card_cover">
+  <form [formGroup]="updateBusinessForm" (ngSubmit)="onSubmit()">
+    
+
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Business Id</label></div>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" formControlName="ID" id="ID" placeholder="Please enter business id"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['ID'].dirty && updateBusinessForm.hasError('required','ID')">*This is required field</span>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Consumer Id</label></div>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" formControlName="Consumer_ID" id="Consumer_ID" placeholder="Please enter consumer id"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Consumer_ID'].dirty && updateBusinessForm.hasError('required','Consumer_ID')">*This is required field</span>
+        </div>
+      </div>
+
+      
+
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Business Category</label></div>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" formControlName="Business_Category" id="Business_Category" placeholder="Please enter business category"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Business_Category'].dirty && updateBusinessForm.hasError('required','Business_Category')">*This is required field</span>
+        </div>
+      </div>
+       
+      <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Business type</label></div>
+        <div class="col-lg-8">
+            <select class="form-control" formControlName="Business_Type">
+                <option value="OWNER">OWNER</option>
+                <option value="RENTAL">RENTAL</option>
+            </select>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Business_Type'].dirty && updateBusinessForm.hasError('required','Business_Type')">*This is required field</span>
+        </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Annual Turnover</label></div>
+        <div class="col-lg-8">
+            <input type="number" class="form-control" name="Business_Turnover" formControlName="Business_Turnover" placeholder="Please enter annual turnover"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Business_Turnover'].dirty && updateBusinessForm.hasError('required','Business_Turnover')">*This is required field</span>
+        </div>
+    </div>
+
+    
+      
+    <div class="row g-4 align-items-center mt-2">
+        <div class="col-lg-4"><label>Capital Invested</label></div>
+        <div class="col-lg-8">
+            <input type="number" formControlName="Capital_Invested" class="form-control"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Capital_Invested'].dirty && updateBusinessForm.hasError('required','Capital_Invested')">*This is required field</span>
+        </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Total Employees</label></div>
+        <div class="col-lg-8">
+            <input type="number" class="form-control" name="" formControlName="Total_Employees" placeholder="Please enter total employees"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Total_Employees'].dirty && updateBusinessForm.hasError('required','Total_Employees')">*This is required field</span>
+        </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4">Business Value</div>
+        <div class="col-lg-8">
+            <input type="number" formControlName="Business_Value" placeholder="Please enter business value" class="form-control" />
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Business_Value'].dirty && updateBusinessForm.hasError('required','Business_Value')">*This is required field</span>
+        </div>
+     </div>   
+
+    <div class="row g-4 align-items-center mt-2">
+        <div class="col-lg-4"><label>Business Age</label></div>
+        <div class="col-lg-8">
+            <input type="number" formControlName="Business_Age" class="form-control"/>
+            <span class="text-danger" *ngIf="updateBusinessForm.controls['Business_Age'].dirty && updateBusinessForm.hasError('required','Business_Age')">*This is required field</span>
+        </div>
+    </div> 
+
+    <button class="btn btn-primary mt-4" [disabled]="!updateBusinessForm.valid">SAVE</button>
+    
+  </form>
+  
+</div>
+
+

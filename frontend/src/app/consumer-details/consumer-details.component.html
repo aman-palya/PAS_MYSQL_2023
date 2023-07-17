@@ -1,0 +1,81 @@
+<body style="background-color:'#30a8fb'">
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        
+        <h1 style="color:aliceblue;" class="navbar-brand">Consumer Details</h1>
+        <div class="d-flex">
+            
+            <button routerLink="/createPolicy" class="btn btn-danger mz-2">Back</button>
+        </div>
+    </div>
+</nav>
+    
+    <br>
+    <br>
+<div class="container">
+    <form [formGroup]="consumerDetailsForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-25">
+        <label for="consumerId">Consumer ID</label>
+      </div>
+      <div class="col-75">
+        <input formControlName="consumerId" type="number" id="consumerId" name="consumerId">
+        <span class="text-danger" *ngIf="consumerDetailsForm.controls['consumerId'].dirty && consumerDetailsForm.hasError('required','consumerId')">*This is required field</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="consumerName">Name</label>
+      </div>
+      <div class="col-75">
+        <input formControlName="consumerName" type="text" id="consumerName" name="consumerName">
+        <span class="text-danger" *ngIf="consumerDetailsForm.controls['consumerName'].dirty && consumerDetailsForm.hasError('required','consumerName')">*This is required field</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="consumerDOB">DOB</label>
+      </div>
+      <div class="col-75">
+        <input formControlName="consumerDOB" type="text" id="consumerDOB" name="consumerDOB">
+        <span class="text-danger" *ngIf="consumerDetailsForm.controls['consumerDOB'].dirty && consumerDetailsForm.hasError('required','consumerDOB')">*This is required field</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="consumerEmail">Email ID</label>
+      </div>
+      <div class="col-75">
+        <input formControlName="consumerEmail" type="email" id="consumerEmail" name="consumerEmail">
+        <span class="text-danger" *ngIf="consumerDetailsForm.controls['consumerEmail'].dirty && consumerDetailsForm.hasError('required','consumerEmail')">*This is required field</span>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="consumerPAN">PAN</label>
+        </div>
+        <div class="col-75">
+          <input formControlName="consumerPAN" type="number" id="consumerPAN" name="consumerPAN">
+          <span class="text-danger" *ngIf="consumerDetailsForm.controls['consumerPAN'].dirty && consumerDetailsForm.hasError('required','consumerPAN')">*This is required field</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="consumerType">Consumer Type</label>
+        </div>
+        <div class="col-75">
+          <input formControlName="consumerType" type="text" id="consumerType" name="consumerType">
+          <span class="text-danger" *ngIf="consumerDetailsForm.controls['consumerType'].dirty && consumerDetailsForm.hasError('required','consumerType')">*This is required field</span>
+        </div>
+        
+    </div> 
+      
+      <br>
+      <div class="row">
+        <input type="submit" value="SAVE" [disabled]="!consumerDetailsForm.valid" class="btn btn-success">
+      </div>
+
+    </form>
+</div>
+  </body>
+  

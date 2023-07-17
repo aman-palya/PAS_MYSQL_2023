@@ -1,0 +1,52 @@
+li{
+    border-bottom: 1px solid transparent;
+}
+
+li:hover{
+    border-bottom:1px solid #ffffff;
+}
+
+.title{
+    color: #ffffff;
+}
+
+#anchor{
+    color:#ffffff; 
+    cursor: pointer;
+}
+
+#active-border{
+    border-bottom: 1px solid #ffffff;
+}
+
+#bg{
+    background:#008000d0;
+}
+
+input, select{
+    padding: 10px;
+}
+
+.getback{
+    cursor: pointer;
+    letter-spacing: 1px;
+    color:#6495ed;
+}
+
+.getback:hover{
+    color: #00008080;
+}
+
+.card_cover{
+    background: #ffffff; 
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.h1_tag{
+    color:#2f4f4f;
+    font-weight:100;
+}
+
+.alignright{
+    text-align: right;
+}

@@ -1,0 +1,59 @@
+<body style="background-color: beige;background-repeat: no-repeat;background-size:cover;background-size: 1400px 700px;">
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue" class="navbar-brand">View Property Details</h1>
+    <div class="d-flex">
+      <button routerLink="/addProperty" class="btn btn-danger mz-2">
+        Back
+      </button>
+    </div>
+  </div>
+</nav>
+<br />
+
+<div class="container">
+  <form [formGroup]="pidForm" (ngSubmit)="getAllPropertyData()">
+    <div><label>PID</label></div>
+    <input type="number" formControlName="pid" id="pid" />
+    <span
+      class="text-danger"
+      *ngIf="
+        pidForm.controls['pid'].dirty && pidForm.hasError('required', 'pid')
+      "
+      >*This is required field</span
+    >
+    <button class="btn btn-primary btn-sm m-2">Search</button>
+  </form>
+</div>
+
+<table class="table container" style="margin-bottom: 30px">
+  <thead>
+    <tr>
+      <th>Property Type</th>
+      <th>Property Value</th>
+      <th>Building Type</th>
+      <th>Insurance Type</th>
+      <th>Area (in sqft.)</th>
+      <th>Building Age</th>
+      <th>Storeys</th>
+      <th>Cost Of Asset</th>
+      <th>Salvage Value</th>
+      <th>Useful Life Of Asset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ this.allPropertyData?.propertytype }}</td>
+      <td>{{ this.allPropertyData?.propertyValue }}</td>
+      <td>{{ this.allPropertyData?.buildingtype }}</td>
+      <td>{{ this.allPropertyData?.insurancetype }}</td>
+      <td>{{ this.allPropertyData?.area }}</td>
+      <td>{{ this.allPropertyData?.age }}</td>
+      <td>{{ this.allPropertyData?.storey }}</td>
+      <td>{{ this.allPropertyData?.costOfAsset }}</td>
+      <td>{{ this.allPropertyData?.salvageValue }}</td>
+      <td>{{ this.allPropertyData?.usefulLifeOfAsset }}</td>
+    </tr>
+  </tbody>
+</table>
+</body>

@@ -1,0 +1,52 @@
+<body style="background-color: beige;background-repeat: no-repeat;background-size:auto;background-size: 1400px 700px">
+  <!-- background-image: url(assets/bg.jfif) -->
+  <!-- <nav class="navbar navbar-light bg-primary"> -->
+    <nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue" class="navbar-brand">View Business Details</h1>
+    <div class="d-flex">
+      <button routerLink="/business" class="btn btn-danger mz-2">Back</button>
+    </div>
+  </div>
+</nav>
+<br />
+<table
+  class="table"
+  style="
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+  "
+>
+  <thead>
+    <tr>
+      <th>Consumer Name</th>
+      <th>Date of Birth</th>
+      <th>Pan</th>
+      <th>Email ID</th>
+      <th>Validity</th>
+      <th>Agent Name</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let data of allBusinessData">
+    <tr>
+      <td>{{ data.name }}</td>
+      <td>{{ data.dob }}</td>
+      <td>{{ data.pan }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.validity }}</td>
+      <td>{{ data.agentName }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="onViewBusiness(data.id)">
+          View Business
+        </button>
+        <!-- <button class="btn btn-primary" routerLink="/updateBusiness">
+          Edit
+        </button>
+      </td> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>

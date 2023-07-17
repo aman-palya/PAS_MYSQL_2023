@@ -1,0 +1,76 @@
+<body style="background-image: url(assets/login.jpg);background-repeat: no-repeat;background-size: 1300px 620px;">
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue" class="navbar-brand">Policy Details</h1>
+    <div class="d-flex">
+      <button
+        style="margin-right: 16px;"
+        class="btn btn-light"
+        routerLink="/createPolicy"
+      >
+        Add Policy
+      </button>
+      <button
+        style="margin-right: 16px"
+        class="btn btn-light"
+        routerLink="/issue-policy"
+      >
+        Issue Policy
+      </button>
+      <button
+        style="margin-right: 16px"
+        class="btn btn-light"
+        routerLink="/viewPolicy"
+      >
+        View Policy
+      </button>
+      <button routerLink="/home" class="btn btn-danger mz-2">Back</button>
+    </div>
+  </div>
+</nav>
+
+<br />
+
+  <!-- <marquee style="padding-top: 50px;">Policy Administration System</marquee> -->
+
+
+<!-- <table class="table" style="width:70%; margin-left: auto; margin-right: auto; border: 1px solid black;">
+    <thead>
+        <tr>
+                <th>Policy Number</th>
+                <th>Property Type</th>
+                <th>Consumer Type</th>
+                <th>Assured Sum(Rs)</th>
+                <th>Tenure(years)</th>
+                <th>Business Value</th>
+                <th>Property Value</th>
+                <th>Base Location</th>
+                <th>Status</th>
+                
+            
+
+
+          
+        </tr>
+    </thead>
+    <tbody *ngFor="let data of allPolicyData">
+  
+        <tr>
+           
+
+            <td>{{ data.POLICY_ID }}</td> 
+            <td>{{ data.PROPERTY_TYPE }}</td>
+            <td>{{ data.CONSUMER_TYPE }}</td>
+            <td>{{ data.ASSURED_SUM }}</td>
+            <td>{{ data.TENURE }}</td>
+            <td>{{ data.BUSINESS_VALUE }}</td>
+            <td>{{ data.PROPERTY_VALUE }}</td>
+            <td>{{ data.BASE_LOCATION }}</td>
+            <td>{{ data.STATUS }}</td>
+        </tr>
+
+            
+
+    </tbody>
+</table>  -->
+</body>

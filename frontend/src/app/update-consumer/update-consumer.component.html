@@ -1,0 +1,130 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+
+        <h1 style="color:aliceblue;" class="navbar-brand">Edit Consumer Details</h1>
+        <div class="d-flex">
+            <button routerLink="/consumer" class="btn btn-danger mz-2">Back</button>
+        </div>
+    </div>
+</nav>
+<form [formGroup]="consumerUpdateForm" (ngSubmit)="onSubmit()">
+    <div class="col-lg-8 p-4 m-auto card_cover">
+        <br/>
+        <div class="p-2">
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Consumer Id</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" value={{consumerData.ID}} disabled id="ID" placeholder="Please enter consumer ID" />
+                </div>
+            </div>
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>First Name</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" value={{consumerData.First_Name}} id="First_Name" placeholder="Please enter consumer name" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Last Name</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" value={{consumerData.Last_Name}} id="Last_Name" placeholder="Please enter consumer name" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Date of Birth</label></div>
+                <div class="col-lg-8">
+                    <input type="date" class="form-control" value={{consumerData.DOB}} name="DOB" id="DOB" placeholder="Please enter the date of birth" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Business type</label></div>
+                <div class="col-lg-8">
+                    <select class="form-control" formControlName="Business_Name" id="Business_Name">
+                    <option value="OWNER">OWNER</option>
+                    <option value="RENTAL">RENTAL</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Pan Id</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="PAN_Details" value={{consumerData.PAN_Details}} id="PAN_Details" placeholder="Please enter PAN ID" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Email</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="Email" id="Email" value={{consumerData.Email}} placeholder="Please enter your email" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Phone Number</label></div>
+                <div class="col-lg-8">
+                    <input type="number" class="form-control" name="Phone" value={{consumerData.Phone}} id="Phone" placeholder="Please enter phone number" />
+                </div>
+            </div>
+            
+            <!-- <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Annual Turnover</label></div>
+                <div class="col-lg-8">
+                    <input type="number" class="form-control" id="" name="ANNUAL_TURNOVER" value={{consumerData.ANNUAL_TURNOVER}} placeholder="Please enter annual turnover" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Total Employees</label></div>
+                <div class="col-lg-8">
+                    <input type="number" class="form-control" name="TOTAL_EMPLOYEES" id="" value={{consumerData.TOTAL_EMPLOYEES}} placeholder="Please enter total employees" />
+                </div>
+            </div> -->
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Website</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="Website" id="Website" value={{consumerData.Website}} placeholder="Please enter website name" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Overview</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="Business_Overview" id="Business_Overview" value={{consumerData.Business_Overview}} placeholder="Please enter Overview" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Validity</label></div>
+                <div class="col-lg-8">
+                    <input type="number" class="form-control" name="Validity_of_Consumer" id="Validity_of_Consumer" value={{consumerData.Validity_of_Consumer}} placeholder="Please enter validity" />
+                </div>
+            </div>
+
+            
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Agent Name</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="Agent_Name" id="Agent_Name" value={{consumerData.Agent_Name}} placeholder="Please enter agent name" />
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-3">
+                <div class="col-lg-4"><label>Agent ID</label></div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="Agent_ID" id="Agent_ID" value={{consumerData.Agent_ID}} placeholder="Please enter agent company" />
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2 align-items-center">
+                <div class="col-lg-4"><button class="btn btn-primary" type="submit">Update Consumer</button></div>
+            </div>
+        </div>
+    </div>
+
+</form>
+<!-- [disabled]="!consumerUpdateForm.valid" -->

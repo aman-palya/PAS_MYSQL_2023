@@ -1,0 +1,284 @@
+<body style="background-color:gainsboro no-repeat;background-size:cover;">
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: rgb(217, 233, 248)" class="navbar-brand">Property Details</h1>
+    <div class="d-flex">
+      <button
+        style="margin-right: 16px"
+        class="btn btn-light"
+        routerLink="/viewProperty"
+      >
+        View Property
+      </button>
+      <button routerLink="/home" class="btn btn-danger mz-2">Back</button>
+    </div>
+  </div>
+</nav>
+
+<div class="p-3"></div>
+
+<div class="p-3"></div>
+<div class="row col-lg-8 align-items-center m-auto p-0 card_cover">
+  <form [formGroup]="addPropertyForm" (ngSubmit)="onSubmit()">
+    <h1 class="h1_tag" style="font-family: Georgia, 'Times New Roman', Times, serif;font-weight: bold;text-align: center;">Add Property</h1><br>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Property Id</label></div>
+      <div class="col-lg-8">
+        <input type="text" placeholder="Enter property ID" class="form-control" formControlName="ID" id="ID" />
+        <span
+          class="text-danger"
+          *ngIf="
+            addPropertyForm.controls['ID'].dirty &&
+            addPropertyForm.hasError('required', 'ID')
+          "
+          >*This is required field</span
+        >
+      </div>
+    </div>
+
+    <!-- <div class="row g-4 align-items-center mb-3">
+        <div class="col-lg-4"><label>Business Id</label></div>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" formControlName="Business_ID" id="Business_ID" />
+            <span class="text-danger" *ngIf="addPropertyForm.controls['Business_ID'].dirty && addPropertyForm.hasError('required','Business_ID')">*This is required field</span>
+        </div>
+      </div> -->
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Consumer Id</label></div>
+      <div class="col-lg-8">
+        <input
+          type="text" placeholder="Please enter consumer ID"
+          class="form-control"
+          formControlName="Consumer_ID"
+          id="Consumer_ID"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addPropertyForm.controls['Consumer_ID'].dirty &&
+            addPropertyForm.hasError('required', 'Consumer_ID')
+          "
+          >*This is required field</span
+        >
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Insurance Type</label></div>
+      <div class="col-lg-8">
+        <!--<input
+          type="text"
+          class="form-control"
+          formControlName="Insurance_Type"
+          id="Insurance_Type"
+        />-->
+        <select class="form-control" formControlName="Insurance_Type">
+          <option value="select" placeholder="select">SELECT</option>
+          <option value="Pay back">Pay back</option>
+          <option value="Replacement">Replacement</option>      
+          </select>
+        <span
+          class="text-danger"
+          *ngIf="
+            addPropertyForm.controls['Insurance_Type'].dirty &&
+            addPropertyForm.hasError('required', 'Insurance_Type')
+          "
+          >*This is required field</span
+        >
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Property Type</label></div>
+      <div class="col-lg-8">
+        <select
+          class="form-control"
+          formControlName="Property_Type"
+          id="Property_Type"
+        >
+          <option value="BUILDING">BUILDING</option>
+          <option value="FACTORY">FACTORY</option>
+          <option value="FLAT">FLAT</option>
+          <!--<option value="PROPERTY IN THE TRANSIT">
+            PROPERTY IN THE TRANSIT
+          </option>-->
+        </select>
+        <span
+          class="text-danger"
+          *ngIf="
+            addPropertyForm.controls['Property_Type'].dirty &&
+            addPropertyForm.hasError('required', 'Property_Type')
+          "
+          >*This is required field</span
+        >
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Area</label></div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Building_Sqft"
+          id="Building_Sqft"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Building_Sqft'].dirty &&
+          addPropertyForm.hasError('required', 'Building_Sqft')
+        "
+        >*This is required field</span
+      >
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Building Type</label></div>
+      <div class="col-lg-8">
+        <select
+          class="form-control"
+          formControlName="Building_Type"
+          id="Building_Type"
+        >
+          <option value="OWNER">OWNER</option>
+          <option value="RENTAL">RENTAL</option>
+        </select>
+        <span
+          class="text-danger"
+          *ngIf="
+            addPropertyForm.controls['Building_Type'].dirty &&
+            addPropertyForm.hasError('required', 'Building_Type')
+          "
+          >*This is required field</span
+        >
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Storeys</label></div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Building_Storeys"
+          id="Building_Storeys"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Building_Storeys'].dirty &&
+          addPropertyForm.hasError('required', 'Building_Storeys')
+        "
+        >*This is required field</span
+      >
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4"><label>Building Age</label></div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Building_Age"
+          id="Building_Age"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Building_Age'].dirty &&
+          addPropertyForm.hasError('required', 'Building_Age')
+        "
+        >*This is required field</span
+      >
+    </div>
+
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4">Property Value</div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Property_Value"
+          id="Property_Value"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Property_Value'].dirty &&
+          addPropertyForm.hasError('required', 'Property_Value')
+        "
+        >*This is required field</span
+      >
+    </div>
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4">Cost Of Asset</div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Cost_of_the_asset"
+          id="Cost_of_the_asset"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Cost_of_the_asset'].dirty &&
+          addPropertyForm.hasError('required', 'Cost_of_the_asset')
+        "
+        >*This is required field</span
+      >
+    </div>
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4">Salvage Value</div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Salvage_value"
+          id="Salvage_value"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Salvage_value'].dirty &&
+          addPropertyForm.hasError('required', 'Salvage_value')
+        "
+        >*This is required field</span
+      >
+    </div>
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-lg-4">Useful Life Of Asset</div>
+      <div class="col-lg-8">
+        <input
+          type="number"
+          formControlName="Useful_Life_of_the_Asset"
+          id="Useful_Life_of_the_Asset"
+          class="form-control"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          addPropertyForm.controls['Useful_Life_of_the_Asset'].dirty &&
+          addPropertyForm.hasError('required', 'Useful_Life_of_the_Asset')
+        "
+        >*This is required field</span
+      >
+    </div>
+    <button class="btn btn-primary mt-4" [disabled]="!addPropertyForm.valid">
+      Save Property
+    </button>
+  </form>
+</div>
+</body>
+
+

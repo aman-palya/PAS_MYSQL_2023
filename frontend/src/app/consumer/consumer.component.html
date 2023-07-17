@@ -1,0 +1,152 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        
+        <h1 style="color:aliceblue;" class="navbar-brand">Consumer Details</h1>
+        <div class="d-flex">
+            
+            <button style='margin-right:16px' class="btn btn-light" routerLink="/viewConsumer">View Consumer</button>
+            <button routerLink="/home" class="btn btn-danger mz-2">Back</button>
+        </div>
+    </div>
+</nav>
+
+<form [formGroup]="consumerForm" (ngSubmit)="onSubmit()">
+    <div class="col-lg-8 p-4 m-auto card_cover">
+        <h1 class="text-center h1_tag">Add Consumer</h1>
+    <div class="p-4">
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Consumer Id</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" formControlName="ID" id="ID" placeholder="Please enter consumer id"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['ID'].dirty && consumerForm.hasError('required','ID')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>First Name</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" formControlName="First_Name" id="First_Name" placeholder="Please enter consumer name"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['First_Name'].dirty && consumerForm.hasError('required','First_Name')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Last Name</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" formControlName="Last_Name" id="Last_Name" placeholder="Please enter consumer name"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Last_Name'].dirty && consumerForm.hasError('required','Last_Name')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Date of Birth</label></div>
+            <div class="col-lg-8">
+                <input type="date" class="form-control" name="DOB" formControlName="DOB" placeholder="Please enter the date of birth"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['DOB'].dirty && consumerForm.hasError('required','DOB')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Business type</label></div>
+            <div class="col-lg-8">
+                <select class="form-control" formControlName="Business_Name">
+                    <option value="OWNER">OWNER</option>
+                    <option value="RENTAL">RENTAL</option>
+                </select>
+                <span class="text-danger" *ngIf="consumerForm.controls['Business_Name'].dirty && consumerForm.hasError('required','Business_Name')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Pan Id</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="PAN_Details" formControlName="PAN_Details" placeholder="Please enter PAN ID"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['PAN_Details'].dirty && consumerForm.hasError('required','PAN_Details')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Email</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="Email" formControlName="Email" placeholder="Please enter your email"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Email'].dirty && consumerForm.hasError('required','Email')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Phone Number</label></div>
+            <div class="col-lg-8">
+                <input type="number" class="form-control" name="Phone" formControlName="Phone" placeholder="Please enter phone number"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Phone'].dirty && consumerForm.hasError('required','Phone')">*This is required field</span>
+            </div>
+        </div>
+
+        
+
+        
+
+        <!-- <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Annual Turnover</label></div>
+            <div class="col-lg-8">
+                <input type="number" class="form-control" name="ANNUAL_TUTOTAL_EMPLOYEESRNOVER" formControlName="ANNUAL_TURNOVER" placeholder="Please enter annual turnover"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['ANNUAL_TURNOVER'].dirty && consumerForm.hasError('required','ANNUAL_TURNOVER')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Total Employees</label></div>
+            <div class="col-lg-8">
+                <input type="number" class="form-control" name="" formControlName="TOTAL_EMPLOYEES" placeholder="Please enter total employees"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['TOTAL_EMPLOYEES'].dirty && consumerForm.hasError('required','TOTAL_EMPLOYEES')">*This is required field</span>
+            </div>
+        </div> -->
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Website</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="Website" formControlName="Website" placeholder="Please enter website name"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Website'].dirty && consumerForm.hasError('required','Website')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Overview</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="Business_Overview" formControlName="Business_Overview" placeholder="Please enter Overview"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Business_Overview'].dirty && consumerForm.hasError('required','Business_Overview')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Validity</label></div>
+            <div class="col-lg-8">
+                <input type="number" class="form-control" name="Validity_of_Consumer" formControlName="Validity_of_Consumer" placeholder="Please enter validity"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Validity_of_Consumer'].dirty && consumerForm.hasError('required','Validity_of_Consumer')">*This is required field</span>
+            </div>
+        </div>
+
+        
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Agent Name</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="Agent_Name" formControlName="Agent_Name" placeholder="Please enter agent name"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Agent_Name'].dirty && consumerForm.hasError('required','Agent_Name')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-lg-4"><label>Agent ID</label></div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="Agent_ID" formControlName="Agent_ID" placeholder="Please enter agent company"/>
+                <span class="text-danger" *ngIf="consumerForm.controls['Agent_ID'].dirty && consumerForm.hasError('required','Agent_ID')">*This is required field</span>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2 align-items-center">
+            <div class="col-lg-4"><button class="btn btn-success" type="submit" [disabled]="!consumerForm.valid">Save Consumer</button></div>
+           
+        </div>
+    </div>
+</div>
+</form>

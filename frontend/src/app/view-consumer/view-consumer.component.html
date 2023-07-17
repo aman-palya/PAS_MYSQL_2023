@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        
+        <h1 style="color:aliceblue;" class="navbar-brand">View Consumer Details</h1>
+        <div class="d-flex">
+            
+            <button routerLink="/consumer" class="btn btn-danger mz-2">Back</button>
+        </div>
+    </div>
+</nav>
+<br>
+
+<table class="table" style="width:70%; margin-left: auto; margin-right: auto; border: 1px solid black;">
+        <thead>
+            <tr>
+                    <th>Consumer ID </th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                    <th>Business Type</th>
+                    <th>PAN</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Website</th>
+                    <th>Overview</th>
+                    <th>Validity</th> 
+                    <th>Agent Name</th>
+                    <th>Agent ID</th>  
+                    <th> </th> 
+            </tr>
+        </thead>
+        <tbody *ngFor="let data of allConsumerData">
+            <tr>
+                <td>{{ data.ID }}</td> 
+                <td>{{ data.First_Name }}</td>
+                <td>{{ data.Last_Name }}</td>
+                <td>{{ data.DOB }}</td>
+                <td>{{ data.Business_Name }}</td>
+                <td>{{ data.PAN_Details }}</td>
+                <td>{{ data.Email }}</td>
+                <td>{{ data.Phone }}</td>
+                <td>{{ data.Website }}</td>
+                <td>{{ data.Business_Overview }}</td>
+                <td>{{ data.Validity_of_Consumer }}</td>
+                <td>{{ data.Agent_Name }}</td>
+                <td>{{ data.Agent_ID }}</td>
+                <td><button class="btn btn-primary" routerLink="/updateConsumer">Edit</button></td>
+            </tr>
+        </tbody>
+</table>  

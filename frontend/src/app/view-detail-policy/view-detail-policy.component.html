@@ -1,0 +1,84 @@
+<body style="background-image: url(assets/bg.jfif);background-repeat: no-repeat;background-size:auto;background-size: 1400px 700px">
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue" class="navbar-brand">Policy Details</h1>
+    <div class="d-flex">
+      <button routerLink="/viewPolicy" class="btn btn-danger mz-2">Back</button>
+    </div>
+  </div>
+</nav>
+<br />
+<br />
+<form [formGroup]="displayForm">
+  <div class="col-lg-4 p-4 m-auto card_cover">
+    <h1 class="text-center h1_tag">Policy Details</h1>
+    <div class="p-4">
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Policy Id</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.policyid }}</label>
+        </div>
+        <div class="col-lg-4">
+          <ng-container></ng-container>
+        </div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Consumer Id</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.consumerid }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Business Id</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.businessid }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Policy Status</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.policystatus }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Payment Details</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.paymentdetails }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Acceptance</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.acceptance }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Duration</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.duration }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-lg-4"><label>Accepted Quote</label></div>
+        <div class="col-lg-4">
+          <label>: {{ data.acceptedquote }}</label>
+        </div>
+        <div class="col-lg-4"><ng-container></ng-container></div>
+      </div>
+    </div>
+  </div>
+</form>
+</body>

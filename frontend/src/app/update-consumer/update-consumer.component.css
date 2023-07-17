@@ -1,0 +1,149 @@
+/* li{
+    border-bottom: 1px solid transparent;
+}
+
+li:hover{
+    border-bottom:1px solid #ffffff;
+}
+
+.getback{
+    cursor: pointer;
+    letter-spacing: 1px;
+    color:#6495ed;
+}
+
+.getback:hover{
+    color: #00008080;
+}
+
+input{
+    padding:10px;
+}
+
+label{
+    color:#2f4f4f;
+}
+
+.title{
+    color: #ffffff;
+}
+
+#bg{
+    background:#008000d0;
+}
+
+#anchor{
+    color:#ffffff; 
+    cursor: pointer;
+}
+
+#active-border{
+    border-bottom: 1px solid #ffffff;
+}
+
+.card_cover{
+    background:#ffffff; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.h1_tag{
+    color:#2f4f4f;
+    font-weight:100;
+}
+
+.alignright{
+    text-align: right;
+} */
+
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+caption {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    color: white;
+    padding: 4px;
+    font-size: 15px;
+}
+
+#table td,
+#table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#table tr:hover {
+    background-color: #ddd;
+}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+button {
+    background-color: teal;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+option {
+    background-color: #64c09e;
+    border: #ddd;
+    border-width: 1;
+    width: 100%;
+}
+
+select {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: teal;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+input {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: teal;
+    border: none;
+    color: #f2f2f2;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #f2f2f2;
+    opacity: 1;
+    text-align: center;
+    margin-left: 20px;
+    align-self: flex-end;
+    /* Firefox */
+}
+
+input[type="text"]:disabled {
+    background: #d81111;
+}
